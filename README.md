@@ -1,12 +1,9 @@
 # urlshortener-angular
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+This project is a client for a fortune Rest Api (https://github.com/gchablowski/urlshortener).
 
-## Build & development
+It created around 2 url :
+* / with a form to post a new url to the Api.
+* /:short_code where the short_code is recuperate in the Api and a redirection is done
 
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+Created By Gérald Chablowski

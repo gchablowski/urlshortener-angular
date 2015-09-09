@@ -19,7 +19,7 @@ angular
     'UrlService'
   ])
   .constant('myConfig', {
-            backend: 'XXX',
+            backend: "XXX",
             client_id: "XXX",
             client_secret: "XXX"
         })
@@ -29,6 +29,11 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/:short_code', {
+        templateUrl: 'views/redirect.html',
+        controller: 'RedirectCtrl',
+        controllerAs: 'redirect'
       })
       .otherwise({
         redirectTo: '/'

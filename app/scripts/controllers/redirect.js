@@ -8,7 +8,7 @@
  * Controller of the urlshortenerAngularApp
  */
 angular.module('urlshortenerAngularApp')
-        .controller('RedirectCtrl', ['$scope', 'Url', '$routeParams', '$window', function($scope, Url, $routeParams, $window) {
+        .controller('RedirectCtrl', ['$scope', 'Url', '$routeParams', '$window', '$location', function($scope, Url, $routeParams, $window, $location) {
                 $scope.error = {};
                 if ($routeParams.short_code) {
                    Url.get({token: $routeParams.short_code}).$promise.then(

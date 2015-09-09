@@ -18,7 +18,9 @@ angular
             'ngTouch',
             'UrlService',
             'LoaderDirective',
-            'SpinnerServices'
+            'SpinnerServices',
+            'TokenServices',
+            'TokenInjectorServices'
         ])
         .constant('myConfig', {
             backend: 'XXX',
@@ -26,6 +28,7 @@ angular
             client_secret: "XXX"
         })
         .config(function($routeProvider, $httpProvider) {
+            $httpProvider.interceptors.push('TokenInjector');
             $httpProvider.interceptors.push('SpinnerInjector');
             $routeProvider
                     .when('/', {

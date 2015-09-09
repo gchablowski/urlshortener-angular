@@ -1,23 +1,17 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="center-container">
+    <div class="form-centered">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="alert alert-success" role="alert" ng-if="!isEmptyObject(valid)">{{valid}}</div>
+                <form name="myForm" ng-submit="submit()" ng-if="isEmptyObject(valid)">
+                    <div class="form-group" ng-class="{'has-error': !myForm.$valid && click === 1 || !isEmptyObject(error), 'has-success': myForm.$valid && click === 1}">
+                        <div class="alert alert-danger" role="alert" ng-if="!isEmptyObject(error)">{{error}}</div>
+                        <label for="email">Url you want to shorten</label>
+                        <input name="url" type="url" class="form-control" id="inputUrl" placeholder="http://" ng-model="url.urlshortener_url.url" ng-click="click = 1" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
